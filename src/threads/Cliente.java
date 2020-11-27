@@ -21,7 +21,7 @@ public void consumir() {
 	
 		while (true) {
 			// salida por pantalla
-			System.out.println("El cliente "+idCliente +" quiere comer una Cangreburguer.");
+			//System.out.println("El cliente "+idCliente +" quiere comer una Cangreburguer.");
 			// solicitamos consumir al hilo
 			this.camarero.put(idCliente);
 			// tras solicitar consumir esperamos un tiempo aleatorio
