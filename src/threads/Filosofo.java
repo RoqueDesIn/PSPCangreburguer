@@ -1,29 +1,30 @@
 package threads;
 
-import seccionCritica.Camarero;
+import seccionCritica.Mesa;
 
-public class Cliente extends Thread {
-private int idCliente;
-private Camarero camarero;
-private final int  MAXSEGCLI=3;
+public class Filosofo extends Thread {
+private int idFilosofo;
+private Mesa mesa;
+private final int  MAXSEGFIL=4;
+private final int MINSEGFIL=2;
 
-public Cliente  (int idCliente, Camarero camarero) {
+public Filosofo  (int idFil, Mesa mesa) {
 	super();
-	this.idCliente = idCliente;
-	this.camarero=camarero;
+	this.idFilosofo = idFil;
+	this.mesa=mesa;
 }
 public void run() {
 	consumir();
 }
 
 public void consumir() {
-	int espera = (int) ((Math.random()*10)%MAXSEGCLI)+1;
+	int espera = (int) Math.floor(((Math.random()*MAXSEGFIL)+MINSEGFIL));
 	
 		while (true) {
 			// salida por pantalla
 			//System.out.println("El cliente "+idCliente +" quiere comer una Cangreburguer.");
 			// solicitamos consumir al hilo
-			this.camarero.put(idCliente);
+			this.mesa.put(idFilosofo);
 			// tras solicitar consumir esperamos un tiempo aleatorio
 			try {
 				Thread.sleep(espera*1000);

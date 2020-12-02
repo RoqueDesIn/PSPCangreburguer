@@ -1,7 +1,7 @@
 package modelos;
 
-public class RegDC {
-	private int cliente;
+public class RegFil {
+	private int filosofo;
 	private long inicio;
 	private long fin;
 	private int contador;
@@ -9,13 +9,13 @@ public class RegDC {
 	
 	/**
 	 * Constructor del modelo para controlar el rendimiento de nuestros cocineros 
-	 * @param cliente
+	 * @param filosofo
 	 * @param inicio
 	 * @param fin
 	 */
-	public RegDC(int cliente, long inicio, long fin, int contador, float media) {
+	public RegFil(int filosofo, long inicio, long fin, int contador, float media) {
 		super();
-		this.cliente = cliente;
+		this.filosofo = filosofo;
 		this.inicio = inicio;
 		this.fin = fin;
 		this.contador= contador;
@@ -26,12 +26,12 @@ public class RegDC {
 	 * getters y setters
 	 * @return
 	 */
-	public int getCliente() {
-		return cliente;
+	public int getFilosofo() {
+		return filosofo;
 	}
 
-	public void setCliente(int cliente) {
-		this.cliente = cliente;
+	public void setFilosofo(int filosofo) {
+		this.filosofo = filosofo;
 	}
 
 	public long getInicio() {
@@ -68,7 +68,7 @@ public class RegDC {
 	}
 
 	public void imprime() {
-		System.out.print( "cliente ["+ this.cliente + "] "
+		System.out.print( "Filósofo ["+ this.filosofo + "] "
 						+ "inicio ["+ this.inicio + "] "
 						+ "fin ["+ this.fin + "] "
 						+ "media ["+ this.media + "] "
